@@ -16,12 +16,14 @@ class MusicPlayer():
             Stop.destroy()
             Close.destroy()
 
-        window.title('Universal Music Player'); window.resizable(0,0)
-        Load =  Button(window, text = 'Load',  width = 10, command = self.load,  bg='#4b7fa4', fg="#fcfcec", font=("times", 20))
-        Play =  Button(window, text = 'Play',  width = 10, command = self.play,  bg='#4b7fa4', fg="#fcfcec", font=("times", 20))
-        Pause = Button(window, text = 'Pause', width = 10, command = self.pause, bg='#4b7fa4', fg="#fcfcec", font=("times", 20))
-        Stop =  Button(window, text = 'Stop',  width = 10, command = self.stop,  bg='#cb464e', fg="#fcfcec", font=("times", 20))
-        Close = Button(window, text = 'Close', width = 10, command = des,        bg='#cb464e', fg="#fcfcec", font=("times", 20))
+        window.title('Music Player - Python'); 
+        window.resizable(False,False)
+
+        Load =  Button(window, text = 'Load',  width = 10, command = self.load,  bg='#4b7fa4', fg="#fcfcec", font=("calibri", 20), borderwidth=0, relief='flat')
+        Play =  Button(window, text = 'Play',  width = 10, command = self.play,  bg='#088948', fg="#fcfcec", font=("calibri", 20), borderwidth=0, relief='flat')
+        Pause = Button(window, text = 'Pause', width = 10, command = self.pause, bg='#FCBE25', fg="#fcfcec", font=("calibri", 20), borderwidth=0, relief='flat')
+        Stop =  Button(window, text = 'Stop',  width = 10, command = self.stop,  bg='#cb464e', fg="#fcfcec", font=("calibri", 20), borderwidth=0, relief='flat')
+        Close = Button(window, text = 'Close', width = 10, command = des,        bg='#cb464e', fg="#fcfcec", font=("calibri", 20), borderwidth=0, relief='flat')
         Load.place(x=0,y=20);Play.place(x=150,y=20);Pause.place(x=300,y=20);Close.place(x=150,y=75)
 
         self.music_file = False
@@ -30,7 +32,6 @@ class MusicPlayer():
     def load(self):
         self.music_file = filedialog.askopenfilename()
         print(self.music_file)
-
 
     def play(self):
         if self.music_file:
